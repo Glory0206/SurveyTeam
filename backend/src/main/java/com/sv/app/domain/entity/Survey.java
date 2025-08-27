@@ -38,10 +38,10 @@ public class Survey {
     private LocalDateTime endDate; // 설문 종료일
     
     @CreationTimestamp // 엔티티 생성 시 자동으로 현재 시간 저장
-    private LocalDateTime createAt; // 생성 시간
+    private LocalDateTime createdAt; // 생성 시간
     
     @UpdateTimestamp // 엔티티 수정 시 자동으로 현재 시간 저장
-    private LocalDateTime updateAt; // 수정 시간
+    private LocalDateTime updatedAt; // 수정 시간
     
     // --- 연관 관계 ---
 
@@ -52,7 +52,7 @@ public class Survey {
 
     // Survey(1) : Question(N)
     @OneToMany(mappedBy = "survey", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Question> questions = new ArrayList<>();
+    private final List<Question> questions = new ArrayList<>();
 
     // --- 빌더 ---
     @Builder

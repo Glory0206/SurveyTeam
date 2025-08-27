@@ -36,7 +36,7 @@ public class Choice {
         this.choiceOrder = choiceOrder;
     }
 
-    // --- 연관관계 편의 메서드 ---
+    // --- 메소드 ---
     public void setQuestion(Question question) {
         this.question = question;
     }

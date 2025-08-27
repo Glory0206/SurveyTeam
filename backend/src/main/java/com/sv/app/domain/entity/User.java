@@ -34,7 +34,7 @@ public class User {
 
     // User(1) : Survey(N)
     @OneToMany(mappedBy = "creator")
-    private List<Survey> surveys = new ArrayList<>();
+    private final List<Survey> surveys = new ArrayList<>();
 
     // --- 빌더 ---
     @Builder

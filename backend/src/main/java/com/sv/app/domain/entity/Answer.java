@@ -17,14 +17,9 @@ public class Answer {
     private Long id;
 
     @Column(columnDefinition = "TEXT")
-    private String content; // 답변 내용
+    private String content; // 주관식 답변 내용
 
     // --- 연관 관계 ---
-
-    // Answer(N) : SurveyResponse(1)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "response_id")
-    private SurveyResponse surveyResponse; // 설문 응답
 
     // Answer(N) : Question(1)
     @ManyToOne(fetch = FetchType.LAZY)
@@ -34,7 +29,7 @@ public class Answer {
     // Answer(N) : Choice(1)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "choice_id")
-    private Choice choice; // 선택
+    private Choice choice;
 
     // --- 빌더 ---
 
@@ -50,10 +45,5 @@ public class Answer {
     public Answer(Question question, Choice choice) {
         this.question = question;
         this.choice = choice;
-    }
-
-    // --- 메소드 ---
-    public void setSurveyResponse(SurveyResponse surveyResponse) {
-        this.surveyResponse = surveyResponse;
     }
 }

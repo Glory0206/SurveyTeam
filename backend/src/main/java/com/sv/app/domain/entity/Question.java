@@ -58,4 +58,8 @@ public class Question {
         this.survey = survey;
     }
 
+    public void addChoice(Choice choice) {
+        this.choices.add(choice);
+        choice.setQuestion(this);
+    }
 }
