@@ -1,4 +1,7 @@
 package com.sv.app.repository;
 
-public interface SurveyRepository {
+import com.sv.app.domain.entity.Survey;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SurveyRepository extends JpaRepository<Survey, Long> {
 }
